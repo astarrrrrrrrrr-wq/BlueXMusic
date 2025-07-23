@@ -40,8 +40,7 @@ async def put_queue(
         if check:
             check.insert(0, put)
         else:
-            db[chat_id] = []
-            db[chat_id].append(put)
+            db[chat_id] = [put]
     else:
         db[chat_id].append(put)
     autoclean.append(file)
@@ -85,7 +84,6 @@ async def put_queue_index(
         if check:
             check.insert(0, put)
         else:
-            db[chat_id] = []
-            db[chat_id].append(put)
+            db[chat_id] = [put]
     else:
         db[chat_id].append(put)
